@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:fab="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:padding="@dimen/Nav_Padding"
+        android:background="#312783"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:id="@+id/relativeLayout">
+
+        <ImageView
+            android:src="@drawable/ic_action_add_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/navIconLeft" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Title"
+            android:textColor="#ffffff"
+            android:id="@+id/textNavigationBar"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentTop="false"
+            android:textSize="18dp"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:id="@+id/navIconRight"
+            android:src="@drawable/ic_chat_white"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="false"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/frameFragment"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/relativeLayout">
+
+        <LinearLayout
+            android:id="@+id/layoutSearch"
+            android:paddingLeft="@dimen/Nav_Padding"
+            android:paddingRight="@dimen/Nav_Padding"
+            android:paddingBottom="@dimen/Nav_Padding"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            android:visibility="gone">
+
+            <EditText
+                android:background="@drawable/rounded_corners"
+                android:drawableLeft="@drawable/search_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawable="@dimen/drawable_padding"
+                android:hint="@string/hint_search"
+                android:id="@+id/editText2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fragment"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_above="@+id/linearLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/layoutSearch">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@color/blue_menu_bottom"
+            android:padding="@dimen/padding_menu_bottom"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/linearLayout"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/layoutMessageListBt"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:src="@drawable/contact_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutContactBt"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent">
+
+                <ImageView
+                    android:src="@drawable/tattoo_store"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView7" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <ImageView
+            android:src="@drawable/chat_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutChatBt"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+
+
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        fab:menu_colorNormal="@color/blue_menu_bottom"
+        fab:menu_colorPressed="@color/blue_menu_bottom"
+        fab:menu_colorRipple="#99FFFFFF"
+        fab:menu_buttonSpacing="0dp"
+        fab:menu_fab_size="normal"
+        fab:menu_labels_ellipsize="end"
+        fab:menu_labels_singleLine="true"
+        fab:menu_backgroundColor="#ccffffff"
+        fab:menu_icon="@drawable/ic_chat_white_menu">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_chat_white"
+            fab:fab_size="mini"
+            fab:fab_label="Chat"
+            fab:fab_colorNormal="@color/indigo_500"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_video"
+            fab:fab_size="mini"
+            fab:fab_label="Live Chat" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/group_placeholder"
+            fab:fab_size="mini"
+            fab:fab_label="Group Chat" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+</RelativeLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">VMCHAT:UI</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_search">Search for people</string>
+
+    <!-- messages -->
+    <string name="action_leave">Leave</string>
+    <string name="action_send">Send</string>
+    <string name="prompt_message">Message</string>
+    <string name="error_connect">Failed to connect</string>
+    <string name="message_welcome">Welcome to Socket.IO Chat –</string>
+
+    <plurals name="message_participants">
+        <item quantity="one">there\'s %d participant</item>
+        <item quantity="other">there are %d participants</item>
+    </plurals>
+
+    <string name="message_user_joined">%s joined</string>
+    <string name="message_user_left">%s left</string>
+    <string name="user_action_typing">is typing</string>
+
+    <!-- MainActivity -->
+    <string name="txtNavigationBar_Message">Message</string>
+    <string name="txtNavigationBar_Chat">Chat</string>
+    <string name="txtNavigationBar_Contact">Contact</string>
+    <string name="txt_EdtHint">Search for peple and groups</string>
+
+    <!-- Fragment ContactList -->
+    <string name="txtContact_CreateGroup">Create a Group</string>
+    <string name="txtContact_createConference">Create a Conference</string>
+    <string name="txtContact_TabFriend">Friend</string>
+    <string name="txtContact_TabFollowing">Following</string>
+    <string name="txtContact_TabFollowers">Followers</string>
+
+    <!-- Dialog -->
+    <string name="txt_dialog_Block">Block</string>
+    <string name="txt_dialog_Follow">Follow</string>
+
+    <!-- Dialog LongClick -->
+    <string name="txtChat_th">แชต</string>
+    <string name="txtSave_th">เก็บ</string>
+    <string name="txtDelete_th">ลบ</string>
+    <string name="basic_del">Delete</string>
+    <string name="str_orange">#C40401</string>
+    <string name="str_green">#3cac69</string>
+    <string name="str_red">#FF4444</string>
+    <string name="str_yellow">#FFBB33</string>
+    <string name="str_sky_blue">#33B5E5</string>
+    <string name="delete">Delete</string>
+    <string name="basic_action_2">Delete</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">Login</string>
+
+    <string name="login_title">Devahoy</string>
+    <string name="username_title">Username</string>
+    <string name="password_title">Password</string>
+    <string name="password_confirm_title">Confirm Password</string>
+    <string name="button_login">Login</string>
+    <string name="button_register">Register</string>
+    <string name="register">New User? Register here</string>
+
+    <string name="login_error_message">Username or Password is incorrect.</string>
+    <string name="register_error_message">Register failed, Try again!</string>
+    <string name="register_password_error">Password does not match</string>
+    <string name="register_success">Register Successful</string>
+
+    <string name="welcome_message">Welcome to Devahoy</string>
+</resources>

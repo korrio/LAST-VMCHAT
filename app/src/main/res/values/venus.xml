@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ora">#FFBB33</color>
+    <style name="venus" >
+        <item name="android:textColor">@color/ora</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="venus.center">
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

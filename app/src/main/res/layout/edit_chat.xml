@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/Camera"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:src="@drawable/camera"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true" />
+
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/video"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:src="@drawable/film"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true" />
+
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/music"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:src="@drawable/music"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true" />
+
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/you_tube"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:src="@drawable/channel"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true" />
+
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/location"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:src="@drawable/marker"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true" />
+
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/smile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:src="@drawable/inlove"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <EditText
+            android:id="@+id/message_input"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            style="@style/venus"
+            android:textColor="#000000"
+            android:layout_weight="0.4"
+            android:gravity="top"
+            android:hint="@string/prompt_message"
+            android:imeActionLabel="@string/action_send"
+            android:imeOptions="actionSend"
+            android:imeActionId="@+id/send" />
+
+        <ImageButton
+            android:layout_weight="0.4"
+            android:id="@+id/send_button"
+            android:layout_width="200dp"
+            android:layout_marginRight="10dp"
+            android:src="@android:drawable/ic_menu_send"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="Post" />
+
+    </LinearLayout>
+</LinearLayout>

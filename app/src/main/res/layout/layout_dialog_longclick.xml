@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:padding="@dimen/dialog_long_click_padding"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="NAME OR GROUP_NAME" />
+
+        <TextView
+            android:padding="@dimen/dialog_long_click_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/txtChat_th" />
+
+        <TextView
+            android:padding="@dimen/dialog_long_click_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/txtSave_th" />
+
+        <TextView
+            android:paddingTop="@dimen/dialog_long_click_padding"
+            android:paddingLeft="@dimen/dialog_long_click_padding"
+            android:paddingRight="@dimen/dialog_long_click_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/txtDelete_th" />
+    </LinearLayout>
+
+</LinearLayout>

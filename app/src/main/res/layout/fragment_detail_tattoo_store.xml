@@ -1,0 +1,120 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dev.chat.vdomax.fragment.FragmentTabhost.TattooStoreDetailFragment">
+
+    <android.support.v7.widget.CardView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        android:id="@+id/cardView"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="6dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/sticker"
+                android:layout_width="120dp"
+                android:layout_height="120dp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/title_vdomax"
+                    android:text="VDO MAX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="By "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/name_sticker"
+                        android:text=" VDO MAX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/date"
+                    android:text="Free"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:textColor="#CC0000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:text="Expire 30 Day"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <Button
+                        android:layout_weight="1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:layout_weight="1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp">
+        <TextView
+            android:textColor="#000000"
+            android:text="In this tutorial we’ll learn how to create a chat client that communicates with a Socket.IO Node.JS chat server, with our"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <GridView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/gridView"
+            android:numColumns="4"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="5dp" />
+    </LinearLayout>
+
+</LinearLayout>
