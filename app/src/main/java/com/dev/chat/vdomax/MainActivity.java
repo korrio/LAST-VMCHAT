@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dev.chat.vdomax.adapter.chat.MainChat;
 import com.dev.chat.vdomax.chat.ChatFragment;
 import com.dev.chat.vdomax.event.retrofit.addfriend.GetFollowSuggestionEvent;
 import com.dev.chat.vdomax.fragment.aaa.ContactViewPagerFragment;
@@ -51,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     private UserManager mManager;
 
     private FloatingActionButton fab1;
+    private FloatingActionButton fab2;
+    private FloatingActionButton fab3;
     private List<FloatingActionMenu> menus = new ArrayList<>();
     private FloatingActionMenu menu1;
 
@@ -109,8 +110,12 @@ public class MainActivity extends AppCompatActivity {
 
         menu1.setClosedOnTouchOutside(true);
         fab1 = (FloatingActionButton) findViewById(R.id.fab1);
-        fab1.setEnabled(false);
+        fab2 = (FloatingActionButton) findViewById(R.id.fab2);
+        fab3 = (FloatingActionButton) findViewById(R.id.fab3);
+        //fab1.setEnabled(false);
         fab1.setOnClickListener(clickListener);
+        fab2.setOnClickListener(clickListener);
+        fab3.setOnClickListener(clickListener);
     }
 
     private View.OnClickListener clickListener = new View.OnClickListener() {
@@ -120,7 +125,19 @@ public class MainActivity extends AppCompatActivity {
 
             switch (v.getId()) {
                 case R.id.fab1:
-                    text = fab1.getLabelText();
+                    UserManager user = new UserManager(getApplicationContext());
+                    Bundle data = new Bundle();
+                    data.putInt("USER_ID_1",user.getPref().getInt(UserManager.KEY_ID, 1));
+                    data.putInt("USER_ID_2", 3082);
+                    ChatFragment fragment = new ChatFragment();
+                    fragment.setArguments(data);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frameFragment, fragment, "CHAT_MAIN").addToBackStack(null).commit();
+                    break;
+                case R.id.fab2:
+
+                    break;
+                case R.id.fab3:
+
                     break;
 
             }
@@ -137,8 +154,13 @@ public class MainActivity extends AppCompatActivity {
         if (bundle != null) {
             String notificationData = bundle.getString("com.parse.Data");
             if (notificationData != null) {
-                Intent i =new Intent(getApplicationContext(), MainChat.class);
-                startActivity(i);
+                UserManager user = new UserManager(this);
+                Bundle data = new Bundle();
+                data.putInt("USER_ID_1",user.getPref().getInt(UserManager.KEY_ID, 1));
+                data.putInt("USER_ID_2", 3082);
+                ChatFragment fragment = new ChatFragment();
+                fragment.setArguments(data);
+                getSupportFragmentManager().beginTransaction().replace(R.id.frameFragment, fragment, "CHAT_MAIN").addToBackStack(null).commit();
             }
 
         }
@@ -208,12 +230,6 @@ public class MainActivity extends AppCompatActivity {
             textNavigationBar.setText(getResources().getString(R.string.txtNavigationBar_Contact));
           //  navIconLeft.setVisibility(View.VISIBLE);
             //navIconRight.setVisibility(View.INVISIBLE);
-        }
-        else if (type_menu == TYPE_MENU.CHAT){
-            transaction.replace(R.id.fragment, ChatFragment.newInstance());
-            textNavigationBar.setText(getResources().getString(R.string.txtNavigationBar_Chat));
-           // navIconLeft.setVisibility(View.VISIBLE);
-           // navIconRight.setVisibility(View.VISIBLE);
         }
         else if (type_menu == TYPE_MENU.MESSAGE_LIST){
 

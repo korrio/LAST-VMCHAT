@@ -5,8 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.Window;
 
-import com.dev.chat.vdomax.R;
-
 /**
  * Created by Adisorn on 7/3/2558.
  */
@@ -21,6 +19,6 @@ public class DialogLongClick extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_dialog_longclick);
+        //setContentView(R.layout.layout_dialog_longclick);
     }
 }

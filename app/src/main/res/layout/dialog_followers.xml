@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/avatar"
-            android:src="@drawable/avatar" />
+            android:src="@drawable/group_placeholder" />
 
     </RelativeLayout>
 
@@ -50,7 +50,7 @@
             android:maxLines="3"
             android:text="What is you name?"
             android:ellipsize="end"
-            android:textColor="#000000"
+            android:textColor="#252525"
             android:textSize="15sp" />
 
         <TextView
@@ -61,7 +61,7 @@
             android:maxLines="3"
             android:text="Waht is last name?"
             android:ellipsize="end"
-            android:textColor="#000000"
+            android:textColor="#252525"
             android:textSize="13sp" />
 
         <TextView
@@ -72,7 +72,7 @@
             android:maxLines="3"
             android:text="at name?"
             android:ellipsize="end"
-            android:textColor="#000000"
+            android:textColor="#252525"
             android:textSize="13sp" />
 
 

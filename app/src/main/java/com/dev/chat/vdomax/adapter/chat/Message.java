@@ -1,4 +1,4 @@
-package com.dev.chat.vdomax.adapter.chat;
+package com.dev.chat.vdomax.model_chat;
 
 public class Message {
 
@@ -6,16 +6,21 @@ public class Message {
     public static final int TYPE_LEFT = 1;
     public static final int TYPE_LOG = 2;
 
-    private int mType;
+    private int mMessageType;
+    private String mData;
+    private int mSideType;
     private String mMessage;
     private String mUsername;
-    private String mImage;
 
     private Message() {}
 
     public int getType() {
-        return mType;
+        return mSideType;
     };
+
+    public String getData() {
+        return mData;
+    }
 
     public String getMessage() {
         return mMessage;
@@ -25,17 +30,35 @@ public class Message {
         return mUsername;
     };
 
-    public String getmImage() {
-        return mImage;
+    public int getMessageType() {
+        return mMessageType;
     }
 
+
     public static class Builder {
-        private final int mType;
+        private int mMessageType;
+        private final int mSideType;
         private String mUsername;
         private String mMessage;
-        private String mImage;
-        public Builder(int type) {
-            mType = type;
+        private String mData;
+
+        public Builder(int messageType,int sideType) {
+            mSideType = sideType;
+            mMessageType = messageType;
+        }
+
+        public Builder(int sideType) {
+            mSideType = sideType;
+        }
+
+        public Builder data(String data) {
+            mData = data;
+            return this;
+        }
+
+        public Builder messageType(int messageType) {
+            mMessageType = messageType;
+            return this;
         }
 
         public Builder username(String username) {
@@ -47,16 +70,14 @@ public class Message {
             mMessage = message;
             return this;
         }
-        public Builder mImage(String mImage) {
-            mImage = mImage;
-            return this;
-        }
+
         public Message build() {
             Message message = new Message();
-            message.mType = mType;
+            message.mMessageType = mMessageType;
+            message.mSideType = mSideType;
             message.mUsername = mUsername;
             message.mMessage = mMessage;
-            message.mImage = mImage;
+            message.mData = mData;
             return message;
         }
     }

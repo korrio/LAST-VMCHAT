@@ -1,8 +1,6 @@
-package com.dev.chat.vdomax.chat;
+package com.dev.chat.vdomax.model_chat;
 
-import com.dev.chat.vdomax.model_chat.MessageBuilder;
-
-public class Message {
+public class MessageBuilder {
 
     public static final int TYPE_RIGHT = 0;
     public static final int TYPE_LEFT = 1;
@@ -14,7 +12,7 @@ public class Message {
     private String mMessage;
     private String mUsername;
 
-    private Message() {}
+    private MessageBuilder() {}
 
     public int getType() {
         return mSideType;
@@ -73,8 +71,8 @@ public class Message {
             return this;
         }
 
-        public Message build() {
-            Message message = new Message();
+        public MessageBuilder build() {
+            MessageBuilder message = new MessageBuilder();
             message.mMessageType = mMessageType;
             message.mSideType = mSideType;
             message.mUsername = mUsername;

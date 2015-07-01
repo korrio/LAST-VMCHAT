@@ -5,14 +5,14 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <RelativeLayout
-        android:background="@android:color/white"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="@dimen/profileSize"
             android:layout_height="@dimen/profileSize"
-            android:id="@+id/picProfile" />
+            android:id="@+id/picProfile"
+            android:src="@drawable/group_placeholder"/>
 
         <TextView
 
@@ -34,7 +34,7 @@
             android:background="@drawable/follow_button_bg"
             android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"

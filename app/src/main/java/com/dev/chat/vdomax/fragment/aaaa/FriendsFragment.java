@@ -1,7 +1,6 @@
 package com.dev.chat.vdomax.fragment.aaaa;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -15,10 +14,11 @@ import android.widget.Toast;
 
 import com.dev.chat.vdomax.R;
 import com.dev.chat.vdomax.adapter.FriendContactListAdapter;
-import com.dev.chat.vdomax.adapter.chat.MainChat;
+import com.dev.chat.vdomax.chat.ChatFragment;
 import com.dev.chat.vdomax.event.retrofit.friend.GetFriendSuccessEvent;
 import com.dev.chat.vdomax.fragment.BaseFragment;
 import com.dev.chat.vdomax.model.friendmodel.FriendsModel;
+import com.dev.chat.vdomax.utils.UserManager;
 import com.github.siyamed.shapeimageview.CircularImageView;
 import com.squareup.otto.Subscribe;
 import com.squareup.picasso.Picasso;
@@ -26,9 +26,7 @@ import com.squareup.picasso.Picasso;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-/**
- * Created by Adisorn on 24/2/2558.
- */
+
 public class FriendsFragment extends BaseFragment {
 
     @InjectView(R.id.epFriendList)
@@ -131,19 +129,14 @@ public class FriendsFragment extends BaseFragment {
                     @Override
                     public void onClick(View v) {
 
-//                        FragmentManager manager = getActivity().getSupportFragmentManager();
-//                        FragmentTransaction transaction = manager.beginTransaction();
-//                        Bundle data = new Bundle();
-//                        data.putString("name", username);
-//                        data.putInt("userId", userId);
-//                        transaction.add(R.id.frameFragment, MainFragment.newInstance());
-//                        transaction.addToBackStack(null);
-//                        transaction.commit();
+                        UserManager user = new UserManager(getActivity());
+                        Bundle data = new Bundle();
+                        data.putInt("USER_ID_1", 6);
+                        data.putInt("USER_ID_2", userId);
+                        ChatFragment fragment = new ChatFragment();
+                        fragment.setArguments(data);
+                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frameFragment, fragment, "CHAT_MAIN").addToBackStack(null).commit();
 
-                        Intent i = new Intent(getActivity(), MainChat.class);
-                        i.putExtra("userName", username);
-                        i.putExtra("userId", userId);
-                        startActivity(i);
                         dialog.dismiss();
                     }
                 });

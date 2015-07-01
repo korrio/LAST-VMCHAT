@@ -113,7 +113,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:src="@drawable/contact_name"
+                    android:src="@drawable/ic_contact_list"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/imageView5" />
@@ -189,7 +189,7 @@
             fab:fab_colorNormal="@color/indigo_500"/>
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fab3"
+            android:id="@+id/fab2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_video"
@@ -197,7 +197,7 @@
             fab:fab_label="Live Chat" />
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fab2"
+            android:id="@+id/fab3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/group_placeholder"

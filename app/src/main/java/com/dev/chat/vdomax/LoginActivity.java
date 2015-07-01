@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,30 +32,20 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 saveId();
-                checkLogin();
+                Intent intent = new Intent(mContext, MainActivity.class);
+                startActivity(intent);
+                //checkLogin();
             }
         });
-
-        Log.e("isLogin/LoginActivity", "::" + mManager.registerUser(mUserId.toString()));
-    }
-
-    private void checkLogin() {
-        String password = mUserId.getText().toString().trim();
-        boolean isSuccess = mManager.checkLoginValidate(password);
-
-        if (isSuccess) {
-            Intent intent = new Intent(mContext, MainActivity.class);
-            startActivity(intent);
-        }
     }
 
     private  void saveId(){
 
-        String password = mUserId.getText().toString();
+        int userId = mUserId.getId();
 
 
-        if (password.equals(password)) {
-            boolean isSuccess = mManager.registerUser(password);
+
+            boolean isSuccess = mManager.registerUser(userId);
 
             if (isSuccess) {
                 String message = getString(R.string.register_success);
@@ -67,10 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
             }
 
-        } else {
-            String message = getString(R.string.register_password_error);
-            Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
-        }
+
     }
 
 }

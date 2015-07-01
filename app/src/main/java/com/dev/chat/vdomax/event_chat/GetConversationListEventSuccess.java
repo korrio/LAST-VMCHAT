@@ -1,4 +1,4 @@
-package com.dev.chat.vdomax.event.event_chat;
+package com.dev.chat.vdomax.event_chat;
 
 import com.dev.chat.vdomax.model_chat.ConversationChat;
 

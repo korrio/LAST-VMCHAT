@@ -65,7 +65,7 @@ public class ListAddFriendAdapter extends BaseAdapter{
         Picasso.with(context)
                 .load(VMChatApp.IMAGE_ENDPOINT + user.getAvatar())
                 .resize(sizePicProfile , sizePicProfile)
-                .placeholder(R.drawable.avatar)
+                .placeholder(R.drawable.placeholder_user)
                 .centerInside()
                 .into(holder.picProfile);
 

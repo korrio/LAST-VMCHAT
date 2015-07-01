@@ -42,7 +42,7 @@ public class CustomAdapter extends BaseAdapter {
                 (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if(view == null)
-            view = mInflater.inflate(R.layout.item_time_stamps, parent, false);
+            view = mInflater.inflate(R.layout.item_conversation, parent, false);
 
         TextView title = (TextView)view.findViewById(R.id.title);
         title.setText(item.getUserName());

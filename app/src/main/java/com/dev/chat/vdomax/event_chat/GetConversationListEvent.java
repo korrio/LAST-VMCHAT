@@ -1,4 +1,4 @@
-package com.dev.chat.vdomax.event.event_chat;
+package com.dev.chat.vdomax.event_chat;
 
 /**
  * Created by Mac on 6/30/15.

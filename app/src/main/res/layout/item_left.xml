@@ -1,41 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#f0f0f0"
-    android:paddingBottom="10dip"
-    android:paddingLeft="8dip"
-    android:paddingRight="80dip"
-    android:paddingTop="10dip">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="5dp"
+    android:paddingLeft="10dp"
+    android:paddingTop="5dp">
 
-    <ImageView
-        android:id="@+id/profile"
-        android:layout_width="40dip"
-        android:layout_height="40dip"
-        android:layout_alignParentLeft="true"
-        android:layout_marginRight="5dip"
-        android:background="@drawable/avatar" />
     <TextView
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/profile"
-        android:layout_toRightOf="@id/profile"
-        android:paddingBottom="18dip"
-        android:paddingTop="13dip"
-        android:text="hewdfb"
-        android:layout_marginTop="-12dp" />
-    <TextView
-        android:id="@+id/message"
+        android:padding="5dp"
+        android:textColor="@color/lblFromName"
+        android:textSize="12dp"
+        android:textStyle="italic" />
+
+    <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/profile"
-        android:layout_toRightOf="@id/profile"
-        android:paddingBottom="18dip"
-        android:paddingTop="13dip"
-        android:text="hewdfb" />
+        android:layout_height="wrap_content">
+        <include layout="@layout/inc_0" />
+    </FrameLayout>
 
 
 
-
-    </RelativeLayout>
+</LinearLayout>

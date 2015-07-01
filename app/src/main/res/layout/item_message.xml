@@ -11,7 +11,7 @@
 
         <com.github.siyamed.shapeimageview.CircularImageView
             android:id="@+id/avatar_chat"
-            android:background="@drawable/avatar"
+            android:background="@drawable/group_placeholder"
             android:layout_width="50dp"
             android:layout_height="50dp" />
 
@@ -26,7 +26,7 @@
         <TextView
             android:id="@+id/username"
             android:text="Username"
-            android:textColor="#000000"
+            android:textColor="#252525"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

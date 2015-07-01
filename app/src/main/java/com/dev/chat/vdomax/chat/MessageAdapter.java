@@ -5,20 +5,24 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dev.chat.vdomax.R;
-import com.github.siyamed.shapeimageview.CircularImageView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.List;
-
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHolder> {
 
     private List<Message> mMessages;
     private int[] mUsernameColors;
+    private Context mContext;
 
     public MessageAdapter(Context context, List<Message> messages) {
+        mContext = context;
         mMessages = messages;
         mUsernameColors = context.getResources().getIntArray(R.array.username_colors);
     }
@@ -27,28 +31,33 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         int layout = -1;
         switch (viewType) {
-        case Message.TYPE_MESSAGE:
-            layout = R.layout.item_message;
+            //left
+        case Message.TYPE_RIGHT:
+            layout = R.layout.item_right;
             break;
+        //right
+        case Message.TYPE_LEFT:
+            layout = R.layout.item_left;
+            break;
+        //log
         case Message.TYPE_LOG:
-            layout = R.layout.item_log;
-            break;
-        case Message.TYPE_ACTION:
-            layout = R.layout.item_action;
-            break;
+                layout = R.layout.item_log;
+                break;
         }
-        View v = LayoutInflater
-                .from(parent.getContext())
-                .inflate(layout, parent, false);
+
+        View v = LayoutInflater.from(parent.getContext()).inflate(layout, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         Message message = mMessages.get(position);
-        viewHolder.setMessage(message.getMessage());
+        try {
+            viewHolder.setMessage(message.getMessageType(),message.getMessage(),message.getData());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         viewHolder.setUsername(message.getUsername());
-
     }
 
     @Override
@@ -64,15 +73,22 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView mUsernameView;
         private TextView mMessageView;
-        private CircularImageView mAvatra;
+        private ImageView mTattooView;
+        private ImageView mImageView;
+
+        private JSONObject mData;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             mUsernameView = (TextView) itemView.findViewById(R.id.username);
             mMessageView = (TextView) itemView.findViewById(R.id.message);
+            //stub = (ViewStub) itemView.findViewById(R.id.layout_stub);
+
 
         }
+
+
 
         public void setUsername(String username) {
             if (null == mUsernameView) return;
@@ -80,9 +96,37 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             mUsernameView.setTextColor(getUsernameColor(username));
         }
 
-        public void setMessage(String message) {
+        public void setMessage(int messageType,String message,String data) throws JSONException {
             if (null == mMessageView) return;
-            mMessageView.setText(message);
+            switch (messageType) {
+                case 0:
+
+                    //mMessageView = (TextView) inflated.findViewById(R.id.message);
+                    mMessageView.setText(message);
+                    break;
+                case 1:
+                    mData = new JSONObject(data);
+
+                    mMessageView.setText(message);
+
+                    //mTattooView = (ImageView) inflated.findViewById(R.id.tattoo);
+                    //Picasso.with(mContext).load(mData.optString("tattooUrl")).into(mTattooView);
+                    //mMessageView.setText(message);
+                    break;
+                case 2:
+                    mData = new JSONObject(data);
+
+                    mMessageView.setText(message);
+
+                    //mImageView = (ImageView) inflated.findViewById(R.id.image);
+                    //Picasso.with(mContext).load("https://chat.vdomax.com:1313"+mData.optString("url")).into(mTattooView);
+
+                    break;
+
+
+
+            }
+
         }
 
         private int getUsernameColor(String username) {

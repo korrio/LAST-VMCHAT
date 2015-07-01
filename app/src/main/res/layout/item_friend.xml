@@ -13,7 +13,7 @@
         android:id="@+id/profile_image"
         android:layout_width="@dimen/avatar_medium"
         android:layout_height="@dimen/avatar_medium"
-        android:src="@drawable/avatar"
+        android:src="@drawable/group_placeholder"
         android:layout_gravity="center"
         android:padding="2dp" />
 
@@ -24,8 +24,8 @@
         android:singleLine="true"
         android:ellipsize="end"
         android:padding="1dp"
-        android:textColor="#222244"
-        android:gravity="center" />
+        android:gravity="center"
+        android:text="Friend"/>
 
     <Button
         android:id="@+id/btn_follow"
@@ -33,6 +33,7 @@
         android:textSize="13dp"
         android:layout_width="96dp"
         android:layout_height="36dp"
-        android:text="Follow" />
+        android:text="Follow"
+        android:background="@drawable/follow_button_selector"/>
 
 </LinearLayout>

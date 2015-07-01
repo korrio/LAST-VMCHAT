@@ -5,14 +5,14 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <RelativeLayout
-        android:background="@android:color/white"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="@dimen/profileSize"
             android:layout_height="@dimen/profileSize"
-            android:id="@+id/picProfile" />
+            android:id="@+id/picProfile"
+            android:src="@drawable/group_placeholder"/>
 
         <LinearLayout
             android:orientation="vertical"
@@ -27,7 +27,6 @@
                 android:layout_marginLeft="@dimen/marginInCell"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white"
                 android:text="Child"
                 android:gravity="center_vertical"
                 android:maxLines="1"
@@ -46,7 +45,6 @@
                 android:layout_marginLeft="@dimen/marginInCell"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white"
                 android:text="Child"
                 android:gravity="center_vertical"
                 android:maxLines="1"

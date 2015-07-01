@@ -15,12 +15,12 @@
             android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableTop="@drawable/ic_friends_chat" />
+            android:drawableBottom="@drawable/ic_friends_chat" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableTop="@drawable/ic_friends_call"
+            android:drawableBottom="@drawable/ic_friends_call"
             android:id="@+id/button5"
             android:gravity="center"
             android:layout_weight="1" />
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn"
             android:gravity="center"
-            android:drawableTop="@drawable/ic_friends_video"
+            android:drawableBottom="@drawable/ic_friends_video"
             android:layout_weight="1" />
     </LinearLayout>
 

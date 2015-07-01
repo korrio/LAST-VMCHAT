@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.dev.chat.vdomax.R;
 import com.dev.chat.vdomax.adapter.contactlistfragment.tab.FollowersListAdapter;
@@ -52,7 +51,7 @@ public class FollowersFragment extends BaseFragment {
 
     @Subscribe
     public void onEvent(GetFollowersSuccessEvent2 event) {
-        Toast.makeText(getActivity(),"GetFollowersSuccessEvent2",Toast.LENGTH_LONG).show();
+        //Toast.makeText(getActivity(),"GetFollowersSuccessEvent2",Toast.LENGTH_LONG).show();
         initData(event.getFollowersModel());
     }
 

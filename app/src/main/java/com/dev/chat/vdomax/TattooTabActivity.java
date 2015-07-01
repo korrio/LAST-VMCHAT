@@ -16,7 +16,7 @@ public class TattooTabActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_view_pager_tattoo_strore);
+        setContentView(R.layout.activity_with_toolbar);
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setElevation(0);

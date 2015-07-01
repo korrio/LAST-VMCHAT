@@ -14,14 +14,14 @@ import android.graphics.drawable.Drawable;
 /**
  * Created by Adisorn on 3/3/2558.
  */
-public class ImageViewCicle extends Drawable{
+public class ImageViewCircle extends Drawable{
     private final Bitmap mBitmap;
     private final Paint mPaint;
     private final RectF mRectF;
     private final int mBitmapWidth;
     private final int mBitmapHeight;
 
-    public ImageViewCicle(Bitmap bitmap) {
+    public ImageViewCircle(Bitmap bitmap) {
         mBitmap = bitmap;
         mRectF = new RectF();
         mPaint = new Paint();

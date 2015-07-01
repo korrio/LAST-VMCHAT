@@ -12,7 +12,7 @@ import com.androidquery.callback.AjaxStatus;
 import com.androidquery.util.AQUtility;
 import com.dev.chat.vdomax.R;
 import com.dev.chat.vdomax.adapter.CustomAdapter;
-import com.dev.chat.vdomax.event.event_chat.GetConversationListEventSuccess;
+import com.dev.chat.vdomax.event_chat.GetConversationListEventSuccess;
 import com.dev.chat.vdomax.fragment.BaseFragment;
 import com.dev.chat.vdomax.model.Conversation;
 import com.dev.chat.vdomax.model_chat.ConversationChat;

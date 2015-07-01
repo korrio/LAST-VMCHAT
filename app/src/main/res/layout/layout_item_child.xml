@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="@dimen/paddingCell"
-    android:background="@android:color/white"
-    android:gravity="center_vertical" >
+                android:gravity="center_vertical" >
 
     <ImageView
         android:layout_width="@dimen/profileSize"
@@ -28,7 +27,6 @@
             android:layout_marginLeft="@dimen/marginInCell"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
             android:text="Child"
             android:gravity="center_vertical"
             android:maxLines="1"
@@ -47,7 +45,6 @@
             android:layout_marginLeft="@dimen/marginInCell"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
             android:text="Child"
             android:gravity="center_vertical"
             android:maxLines="1"
