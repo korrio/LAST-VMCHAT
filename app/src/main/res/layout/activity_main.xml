@@ -169,7 +169,7 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         android:paddingLeft="10dp"
-        fab:menu_colorNormal="@color/blue_menu_bottom"
+        fab:menu_colorNormal="@color/fab_menu"
         fab:menu_colorPressed="@color/blue_menu_bottom"
         fab:menu_colorRipple="#99FFFFFF"
         fab:menu_buttonSpacing="0dp"
@@ -183,26 +183,37 @@
             android:id="@+id/fab1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_chat_white"
+            android:src="@drawable/chat"
             fab:fab_size="mini"
             fab:fab_label="Chat"
-            fab:fab_colorNormal="@color/indigo_500"/>
+            fab:fab_colorNormal="@color/fab_chat"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fab2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_video"
+            android:src="@drawable/vdo"
             fab:fab_size="mini"
-            fab:fab_label="Live Chat" />
+            fab:fab_label="Live Chat"
+            fab:fab_colorNormal="@color/fab_live_chat"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fab3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/group_placeholder"
+            android:src="@drawable/group"
             fab:fab_size="mini"
-            fab:fab_label="Group Chat" />
+            fab:fab_label="Group Chat"
+            fab:fab_colorNormal="@color/fab_group_chat"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/conference"
+            fab:fab_size="mini"
+            fab:fab_label="Group Chat"
+            fab:fab_colorNormal="@color/fab_conference"/>
 
     </com.github.clans.fab.FloatingActionMenu>
 

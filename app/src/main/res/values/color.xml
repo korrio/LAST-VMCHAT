@@ -103,5 +103,12 @@
     <color name="transparent">#80000000</color>
 
 
+    <color name="fab_menu">#3296f6</color>
+    <color name="fab_chat">#fc9700</color>
+    <color name="fab_live_chat">#d31f10</color>
+    <color name="fab_group_chat">#363f46</color>
+    <color name="fab_conference">#4cae47</color>
+
+
 
 </resources>

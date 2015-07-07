@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
         mManager  = new UserManager(this);
         ParseAnalytics.trackAppOpenedInBackground(getIntent());
-        PushService.subscribe(getApplication(), "Free_version", MainActivity.class);
+        PushService.subscribe(getApplication(), "VMCODE", MainActivity.class);
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -83,10 +83,12 @@ public class MainActivity extends AppCompatActivity {
     public void initFAB() {
         menu1 = (FloatingActionMenu) findViewById(R.id.menu1);
 
+        /*
         final FloatingActionButton programFab1 = new FloatingActionButton(this);
         programFab1.setButtonSize(FloatingActionButton.SIZE_MINI);
         programFab1.setLabelText("Conference Chat");
-        programFab1.setImageResource(R.drawable.group_placeholder);
+        programFab1.setImageResource(R.drawable.conference);
+        programFab1.setColorNormal(R.color.fab_conference);
         menu1.addMenuButton(programFab1);
         programFab1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(FloatingMenusActivity.this, programFab1.getLabelText(), Toast.LENGTH_SHORT).show();
             }
         });
+        */
 
         menus.add(menu1);
         menu1.hideMenuButton(false);
