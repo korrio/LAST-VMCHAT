@@ -65,7 +65,7 @@ public class TattooStoreAdapter extends BaseAdapter {
 
         Picasso.with(activity)
                 .load(item.getImageLogo())
-                .fit().centerCrop()
+                .fit()
                 .into(holder.sticker);
 //        Picasso.with(activity)
 //                .load(item.getImageProfileUrl())

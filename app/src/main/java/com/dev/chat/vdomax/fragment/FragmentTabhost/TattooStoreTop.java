@@ -60,15 +60,12 @@ public class TattooStoreTop extends Fragment {
 
         final View headerView = getActivity().getLayoutInflater().inflate(R.layout.item_header_tattoo_store_top,mListView, false);
         mListView.addHeaderView(headerView);
-
-
         mListView.setAdapter(adapter);
-
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent i =new Intent(getActivity(), TattooDetailActivity.class);
+                Intent i = new Intent(getActivity(), TattooDetailActivity.class);
                 Parcelable wrapped = Parcels.wrap(list.get(position-1));
                 Bundle bundle = new Bundle();
                 bundle.putParcelable("tattoo", wrapped);
@@ -104,9 +101,7 @@ public class TattooStoreTop extends Fragment {
             JSONArray ja = jo.optJSONArray("tattoo");
             for (int i = 0; i < ja.length(); i++) {
                 JSONObject obj = ja.optJSONObject(i);
-
                 JSONArray jArray = obj.optJSONArray("itemset");
-
                 ArrayList<String> listdata = new ArrayList<String>();
 
                 if (jArray != null) {

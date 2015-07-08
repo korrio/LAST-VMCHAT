@@ -74,7 +74,8 @@
                     android:textStyle="bold"
                     android:textSize="15dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"/>
 
                 <LinearLayout
                     android:orientation="horizontal"

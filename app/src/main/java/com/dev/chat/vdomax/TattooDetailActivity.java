@@ -6,7 +6,6 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.androidquery.AQuery;
 import com.dev.chat.vdomax.adapter.TattooStoreDetailAdapter;
 import com.dev.chat.vdomax.model.TattooStore;
 import com.squareup.picasso.Picasso;
@@ -32,7 +31,6 @@ public class TattooDetailActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tattoo_detail);
-        AQuery aq = new AQuery(getApplicationContext());
 
         sticker = (ImageView) findViewById(R.id.sticker);
         title_vdomax = (TextView) findViewById(R.id.title_vdomax);
@@ -43,8 +41,8 @@ public class TattooDetailActivity extends ActionBarActivity {
 
         TattooStore tattoo = Parcels.unwrap(getIntent().getBundleExtra("bundle").getParcelable("tattoo"));
 
-        title_vdomax.setText(tattoo.getItem_set_name());
-        name_sticker.setText(tattoo.getCreate_by_name());
+        title_vdomax.setText(tattoo.getCreate_by_name());
+        name_sticker.setText(tattoo.getItem_set_name());
 
         Picasso.with(getApplicationContext())
                 .load(tattoo.getImageLogo())
