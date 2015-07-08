@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import com.dev.chat.vdomax.model.ConversationGroup;
+import com.dev.chat.vdomax.utils.EndpointManager;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
@@ -355,6 +356,14 @@ public class User implements Parcelable{
     @Override
     public String toString(){
         return "birthday = " + mBirthday + ", gender = " + mGender + ", verified = " + mVerified + ", avatarId = " + mAvatarId + ", cover = " + mCover + ", coverId = " + mCoverId + ", language = " + mLanguage + ", about = " + mAbout + ", avatar = " + mAvatar + ", timestamp = " + mTimestamp + ", coverPosition = " + mCoverPosition + ", emailVerificationKey = " + mEmailVerificationKey + ", username = " + mUsername + ", type = " + mType + ", id = " + mId + ", lastLogged = " + mLastLogged + ", password = " + mPassword + ", emailVerified = " + mEmailVerified + ", timezone = " + mTimezone + ", name = " + mName + ", active = " + mActive + ", time = " + mTime + ", email = " + mEmail;
+    }
+
+    public String getAvatarUrl() {
+        return EndpointManager.getPath(mAvatar);
+    }
+
+    public String getCoverUrl() {
+        return EndpointManager.getPath(mCover);
     }
 
 

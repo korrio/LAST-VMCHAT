@@ -6,16 +6,16 @@ import com.dev.chat.vdomax.model.friendmodel.FriendsModel;
  * Created by Adisorn on 14/3/2558.
  */
 public class GetFriendSuccessEvent {
-    private FriendsModel frindModel;
-    public GetFriendSuccessEvent(FriendsModel frindModel) {
-        this.frindModel = frindModel;
+    private FriendsModel friendModel;
+    public GetFriendSuccessEvent(FriendsModel friendModel) {
+        this.friendModel = friendModel;
     }
 
-    public FriendsModel getFrindModel() {
-        return frindModel;
+    public FriendsModel getFriendModel() {
+        return friendModel;
     }
 
-    public void setFrindModel(FriendsModel frindModel) {
-        this.frindModel = frindModel;
+    public void setFriendModel(FriendsModel friendModel) {
+        this.friendModel = friendModel;
     }
 }

@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +31,7 @@ import butterknife.OnClick;
  */
 public class ContactViewPagerFragment extends BaseFragment {
     UserManager manager;
-    String userId;
+    int userId;
 
     private ContactTabAdapter adapter;
 
@@ -46,10 +47,12 @@ public class ContactViewPagerFragment extends BaseFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         manager = new UserManager(getActivity());
-        userId = manager.getPref().getString("password","1");
+        userId = manager.getUserId();
 
-        ApiBus.getInstance().post(new GetFriendsEvent(userId));
-        ApiBus.getInstance().post(new GetFollowingsEvent(userId));
+        Log.e("user_id",userId+"");
+
+        ApiBus.getInstance().post(new GetFriendsEvent(userId + ""));
+        ApiBus.getInstance().post(new GetFollowingsEvent(userId + ""));
 
     }
 
@@ -91,7 +94,7 @@ public class ContactViewPagerFragment extends BaseFragment {
 
             @Override
             public void onPageSelected(int position) {
-                ApiBus.getInstance().post(new GetFollowersEvent(userId));
+                ApiBus.getInstance().post(new GetFollowersEvent(userId + ""));
             }
 
             @Override
@@ -106,7 +109,7 @@ public class ContactViewPagerFragment extends BaseFragment {
     @OnClick(R.id.btCreateGroup) public void onClickCreateGroup(){
         FragmentManager manager = getActivity().getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.add(R.id.frameFragment, CreateGroupFragment.newInstance());
+        transaction.add(R.id.fragment, CreateGroupFragment.newInstance());
         transaction.addToBackStack(null);
         transaction.commit();
        // Toast.makeText(getActivity(), "navIconLeft", Toast.LENGTH_SHORT).show();
@@ -115,7 +118,7 @@ public class ContactViewPagerFragment extends BaseFragment {
     @OnClick(R.id.btCreateConference) public void onClickConference(){
         FragmentManager manager = getActivity().getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.add(R.id.frameFragment, GroupListFragment.newInstance());
+        transaction.add(R.id.fragment, GroupListFragment.newInstance());
         transaction.addToBackStack(null);
         transaction.commit();
     }

@@ -129,7 +129,7 @@ public class CreateGroupFragment extends BaseFragment {
 //        text.setText("OK : " + count);
 //        count++;
 //
-//        this.friendModel = event.getFrindModel();
+//        this.friendModel = event.getFriendModel();
 //
 //        initDataToView(friendModel);
     }

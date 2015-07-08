@@ -24,8 +24,8 @@ import butterknife.Optional;
  */
 public class MessageListAdapter extends BaseExpandableListAdapter {
     private Context _context;
-    //   private List<String> _listDataHeader; // header titles
-    // child data in format of header title, child title
+    //   private List<String> _listDataHeader; // dialog_header titles
+    // child data in format of dialog_header title, child title
     // private HashMap<String, List<String>> _listDataChild;
 
     private int TYPE_GROUP = 0;

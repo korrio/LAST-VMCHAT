@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.dev.chat.vdomax.utils.UserManager;
 
@@ -37,23 +36,23 @@ public class LoginActivity extends AppCompatActivity {
                 //checkLogin();
             }
         });
+
+
     }
 
     private  void saveId(){
 
-        int userId = mUserId.getId();
-
-
+        int userId = Integer.parseInt(mUserId.getText().toString());
 
             boolean isSuccess = mManager.registerUser(userId);
 
             if (isSuccess) {
                 String message = getString(R.string.register_success);
-                Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mContext, message + "user_id:" + mManager, Toast.LENGTH_SHORT).show();
 
             } else {
                 String message = getString(R.string.register_error_message);
-                Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
             }
 
 

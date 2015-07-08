@@ -7,7 +7,7 @@ import java.util.List;
 import android.os.Parcel;
 
 
-public class Follow_SuggestionModel implements Parcelable{
+public class FollowSuggestionModel implements Parcelable{
 
     private static final String FIELD_STATUS = "status";
     private static final String FIELD_USERS = "users";
@@ -22,7 +22,7 @@ public class Follow_SuggestionModel implements Parcelable{
     private int mTotal;
 
 
-    public Follow_SuggestionModel(){
+    public FollowSuggestionModel(){
 
     }
 
@@ -50,7 +50,7 @@ public class Follow_SuggestionModel implements Parcelable{
         return mTotal;
     }
 
-    public Follow_SuggestionModel(Parcel in) {
+    public FollowSuggestionModel(Parcel in) {
         mStatus = in.readInt();
         mUsers = new ArrayList<User>();
         in.readTypedList(mUsers, User.CREATOR);
@@ -62,13 +62,13 @@ public class Follow_SuggestionModel implements Parcelable{
         return 0;
     }
 
-    public static final Creator<Follow_SuggestionModel> CREATOR = new Creator<Follow_SuggestionModel>() {
-        public Follow_SuggestionModel createFromParcel(Parcel in) {
-            return new Follow_SuggestionModel(in);
+    public static final Creator<FollowSuggestionModel> CREATOR = new Creator<FollowSuggestionModel>() {
+        public FollowSuggestionModel createFromParcel(Parcel in) {
+            return new FollowSuggestionModel(in);
         }
 
-        public Follow_SuggestionModel[] newArray(int size) {
-        return new Follow_SuggestionModel[size];
+        public FollowSuggestionModel[] newArray(int size) {
+        return new FollowSuggestionModel[size];
         }
     };
 

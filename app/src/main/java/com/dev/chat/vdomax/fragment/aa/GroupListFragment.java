@@ -12,6 +12,7 @@ import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxStatus;
 import com.androidquery.util.AQUtility;
 import com.dev.chat.vdomax.R;
+import com.dev.chat.vdomax.VMChatApp;
 import com.dev.chat.vdomax.adapter.GroupListAdapter;
 import com.dev.chat.vdomax.fragment.BaseFragment;
 import com.dev.chat.vdomax.model.ConversationGroup;
@@ -27,7 +28,7 @@ public class GroupListFragment extends BaseFragment {
     String url;
 
     UserManager manager;
-    String userId;
+    int userId;
     ArrayList<ConversationGroup> groupList = new ArrayList<ConversationGroup>();
     private GroupListAdapter groupListAdapter;
     private ListView groupListView;
@@ -55,10 +56,9 @@ public class GroupListFragment extends BaseFragment {
         groupListView.setAdapter(groupListAdapter);
 
         manager = new UserManager(getActivity());
-        userId = manager.getPref().getString("password", "1");
+        userId = manager.getUserId();
 
-        url = "http://chat.vdomax.com:1314/api/chat/group/" + userId;
-
+        url = VMChatApp.CHAT_ENDPOINT + "/api/chat/group/" + userId;
 
         if(!check){
             aq.ajax(url, JSONObject.class, this, "getjson");
@@ -90,7 +90,7 @@ public class GroupListFragment extends BaseFragment {
                 sub2 = createdAt.substring(11, 16);
 
                 groupAvatar = object.optString("avatar");
-                avatarUrl = "http://chat.vdomax.com:1314" + groupAvatar;
+                avatarUrl = VMChatApp.CHAT_ENDPOINT + groupAvatar;
                 
                 ConversationGroup item = new ConversationGroup(conversationId, name, avatarUrl, sub2);
                 groupList.add(item);

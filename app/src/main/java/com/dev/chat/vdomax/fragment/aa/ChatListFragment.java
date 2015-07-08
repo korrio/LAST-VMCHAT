@@ -11,6 +11,7 @@ import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxStatus;
 import com.androidquery.util.AQUtility;
 import com.dev.chat.vdomax.R;
+import com.dev.chat.vdomax.VMChatApp;
 import com.dev.chat.vdomax.adapter.CustomAdapter;
 import com.dev.chat.vdomax.event_chat.GetConversationListEventSuccess;
 import com.dev.chat.vdomax.fragment.BaseFragment;
@@ -33,7 +34,7 @@ import butterknife.ButterKnife;
 public class ChatListFragment extends BaseFragment {
 
     UserManager manager;
-    String userId;
+    int userId;
     ListView listView2;
     ArrayList<Conversation> list = new ArrayList<>();
     CustomAdapter customAdapter;
@@ -55,11 +56,11 @@ public class ChatListFragment extends BaseFragment {
         aq = new AQuery(getActivity());
 
         manager = new UserManager(getActivity());
-        userId = manager.getPref().getString("password", "1");
+        userId = manager.getUserId();
 
         if(!check){
             //ApiBus.getInstance().post(new GetConversationListEvent(Integer.parseInt(userId)));
-            url = "http://chat.vdomax.com:1314/api/chat/list/" + userId;
+            url = VMChatApp.CHAT_ENDPOINT + "/api/chat/list/" + userId;
             aq.ajax(url, JSONObject.class, this, "getjson");
         }
     }
@@ -74,9 +75,9 @@ public class ChatListFragment extends BaseFragment {
 
             String avatarUrl;
             if (avatar != null) {
-                avatarUrl = "https://www.vdomax.com/" + avatar + ".jpg";
+                avatarUrl = VMChatApp.IMAGE_ENDPOINT + avatar + ".jpg";
             } else {
-                avatarUrl = "https://www.vdomax.com/themes/vdomax1.1/images/default-female-avatarUrl.png";
+                avatarUrl = VMChatApp.IMAGE_ENDPOINT + "themes/vdomax1.1/images/default-female-avatar.png";
             }
 
             String sub2 = conv.getLastHistoryDatetime().substring(11, 16);

@@ -3,6 +3,8 @@ package com.dev.chat.vdomax.handler;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.dev.chat.vdomax.event.GetUserEvent;
+import com.dev.chat.vdomax.event.GetUserEventSuccess;
 import com.dev.chat.vdomax.event.retrofit.addfriend.GetFollowSuggestionEvent;
 import com.dev.chat.vdomax.event.retrofit.addfriend.GetFollow_SuggestionSuccessEvent;
 import com.dev.chat.vdomax.event.retrofit.followers.GetFollowersEvent;
@@ -11,7 +13,8 @@ import com.dev.chat.vdomax.event.retrofit.following.GetFollowingsEvent;
 import com.dev.chat.vdomax.event.retrofit.following.GetFollowingsSuccessEvent;
 import com.dev.chat.vdomax.event.retrofit.friend.GetFriendSuccessEvent;
 import com.dev.chat.vdomax.event.retrofit.friend.GetFriendsEvent;
-import com.dev.chat.vdomax.model.follow_suggestion_model.Follow_SuggestionModel;
+import com.dev.chat.vdomax.model.UserMe;
+import com.dev.chat.vdomax.model.follow_suggestion_model.FollowSuggestionModel;
 import com.dev.chat.vdomax.model.followersmodel.FollowersModel;
 import com.dev.chat.vdomax.model.followingmodel.FollowingsModel;
 import com.dev.chat.vdomax.model.friendmodel.FriendsModel;
@@ -94,10 +97,24 @@ public class SocialApiHandler {
 
     @Subscribe public void getFollowSuggestion(GetFollowSuggestionEvent event){
 
-        api.getFollowSuggestion("", new Callback<Follow_SuggestionModel>() {
+        api.getFollowSuggestion("", new Callback<FollowSuggestionModel>() {
             @Override
-            public void success(Follow_SuggestionModel follow_suggestionModel, Response response) {
+            public void success(FollowSuggestionModel follow_suggestionModel, Response response) {
                 apiBus.post(new GetFollow_SuggestionSuccessEvent(follow_suggestionModel));
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+
+            }
+        });
+    }
+
+    @Subscribe public void getUser(GetUserEvent event) {
+        api.getUser("", event.id, new Callback<UserMe>() {
+            @Override
+            public void success(UserMe userMe, Response response) {
+                apiBus.post(new GetUserEventSuccess(userMe));
             }
 
             @Override

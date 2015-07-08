@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.dev.chat.vdomax.R;
 import com.dev.chat.vdomax.VMChatApp;
-import com.dev.chat.vdomax.model.follow_suggestion_model.Follow_SuggestionModel;
+import com.dev.chat.vdomax.model.follow_suggestion_model.FollowSuggestionModel;
 import com.dev.chat.vdomax.model.follow_suggestion_model.User;
 import com.squareup.picasso.Picasso;
 
@@ -25,8 +25,8 @@ public class ListAddFriendAdapter extends BaseAdapter{
     private Context context;
     private int sizePicProfile;
 
-    private Follow_SuggestionModel followingModel;
-    public ListAddFriendAdapter(Context context, Follow_SuggestionModel followingModel) {
+    private FollowSuggestionModel followingModel;
+    public ListAddFriendAdapter(Context context, FollowSuggestionModel followingModel) {
         this.context = context;
         this.followingModel = followingModel;
         sizePicProfile = context.getResources().getInteger(R.integer.sizePicProfile);

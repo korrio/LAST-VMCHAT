@@ -74,7 +74,7 @@ public class FriendsFragment extends BaseFragment {
     @Subscribe
     public void onGetFriendSuccessEvent(GetFriendSuccessEvent event) {
         count++;
-        this.friendsModel = event.getFrindModel();
+        this.friendsModel = event.getFriendModel();
         initDataToView(friendsModel);
     }
 

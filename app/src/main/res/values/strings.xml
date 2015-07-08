@@ -24,6 +24,7 @@
 
     <!-- MainActivity -->
     <string name="txtNavigationBar_Message">Message</string>
+    <string name="txtNavigationBar_Tattoo">Tattoo</string>
     <string name="txtNavigationBar_Chat">Chat</string>
     <string name="txtNavigationBar_Contact">Contact</string>
     <string name="txt_EdtHint">Search for peple and groups</string>
@@ -54,7 +55,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_login">Login</string>
 
-    <string name="login_title">Devahoy</string>
     <string name="username_title">Username</string>
     <string name="password_title">Password</string>
     <string name="password_confirm_title">Confirm Password</string>
@@ -67,5 +67,14 @@
     <string name="register_password_error">Password does not match</string>
     <string name="register_success">Register Successful</string>
 
-    <string name="welcome_message">Welcome to Devahoy</string>
+    <string name="dialog_header_title">Title</string>
+    <string name="dialog_header_subtitle">Subtitle</string>
+
+    <string name="dialog_footer_title">Title</string>
+    <string name="dialog_footer_close">Close</string>
+    <string name="dialog_footer_confirm">Confirm</string>
+
+    <string name="add_from_qr">From QR Code</string>
+    <string name="add_from_id">From ID</string>
+
 </resources>

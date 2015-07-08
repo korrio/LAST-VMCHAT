@@ -12,11 +12,11 @@ import com.dev.chat.vdomax.fragment.FragmentTabhost.TattooStoreTop;
 /**
  * Created by root1 on 4/18/15.
  */
-public class PagerAdapter extends FragmentPagerAdapter {
+public class TattooPagerAdapter extends FragmentPagerAdapter {
     final int PAGE_COUNT = 3;
-    private String tabTitles[] = new String[] { "ท๊อป", "ใหม่","เหตุการณ์"};
+    private String tabTitles[] = new String[] { "Top", "New","Event"};
 
-    public PagerAdapter(FragmentManager fm) {
+    public TattooPagerAdapter(FragmentManager fm) {
         super(fm);
 
     }

@@ -79,20 +79,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/fragment"
-            android:background="#ffffff"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom"
-            android:layout_above="@+id/linearLayout"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/layoutSearch">
-
-        </LinearLayout>
-
-        <LinearLayout
             android:background="@color/blue_menu_bottom"
             android:padding="@dimen/padding_menu_bottom"
             android:weightSum="3"
@@ -101,8 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:id="@+id/linearLayout"
-            android:layout_alignParentBottom="true"
-            android:visibility="gone">
+            android:layout_alignParentBottom="true">
 
             <LinearLayout
                 android:id="@+id/layoutMessageListBt"
@@ -142,6 +127,22 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/fragment"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_below="@+id/layoutSearch"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/linearLayout">
+
+        </LinearLayout>
+
+
+
 
 
         <ImageView
@@ -151,14 +152,13 @@
             android:id="@+id/layoutChatBt"
             android:layout_alignParentBottom="true"
             android:layout_gravity="bottom"
-            android:layout_centerHorizontal="true"
-            android:visibility="gone"/>
+            android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>
 
 
 
-
+<!--
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/menu1"
         android:layout_width="match_parent"
@@ -178,6 +178,15 @@
         fab:menu_labels_singleLine="true"
         fab:menu_backgroundColor="#ccffffff"
         fab:menu_icon="@drawable/ic_chat_white_menu">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/qr"
+            fab:fab_size="mini"
+            fab:fab_label="My QR"
+            fab:fab_colorNormal="@color/white"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fab1"
@@ -212,9 +221,12 @@
             android:layout_height="wrap_content"
             android:src="@drawable/conference"
             fab:fab_size="mini"
-            fab:fab_label="Group Chat"
+            fab:fab_label="Conference Chat"
             fab:fab_colorNormal="@color/fab_conference"/>
 
+
+
     </com.github.clans.fab.FloatingActionMenu>
+    -->
 
 </RelativeLayout>

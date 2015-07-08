@@ -18,7 +18,8 @@ import retrofit.RestAdapter;
  */
 public class VMChatApp extends Application{
     public static final String IMAGE_ENDPOINT = "https://www.vdomax.com/";
-    public static final String SOCIAL_ENDPOINT = "http://api.vdomax.com/1.0";
+
+    public static final String SOCIAL_ENDPOINT = "http://api.vdomax.com";
     public static final String CHAT_ENDPOINT = "https://chat.vdomax.com:1314";
 
     String userToken = "eyJpdiI6IlorM2g2WFFoaitOc0hwSDZLb2hkXC9RPT0iLCJ2YWx1ZSI6ImxGVTJ0R0JkaGR0VW5oZkhaVFFQdVZiT1lvXC94VUxGc0JkS1VFZUFGVTVTQ1dpd3J4dGYzYlFnYURaY0pHdWpJNGVEZ3d2Umk5NjlFMXdtTlM4NXF4M2VwY3lWdzFWN0FMbVBTR2o4bHhqR0NHXC82NU5GeGoyazNKZ2U1TVFzbUFCaEk0NndTWEZ3RjlUd0o0YkVtT21nPT0iLCJtYWMiOiIyZmRmZmQ1ZmUyNzk4NzIyZTViYzA0MmEyMTI4MTZhMGMwZGFkM2M4YzUzMjc3YmYyNDQ1NWQyYWQ0OWM3NTY2In0";

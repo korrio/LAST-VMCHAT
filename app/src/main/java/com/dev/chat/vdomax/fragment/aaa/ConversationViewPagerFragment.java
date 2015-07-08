@@ -13,11 +13,9 @@ import android.view.ViewGroup;
 import com.astuetz.PagerSlidingTabStrip;
 import com.dev.chat.vdomax.R;
 import com.dev.chat.vdomax.adapter.contactlistfragment.ConversationTabAdapter;
-import com.dev.chat.vdomax.event.retrofit.followers.GetFollowersEvent;
 import com.dev.chat.vdomax.fragment.BaseFragment;
 import com.dev.chat.vdomax.fragment.CreateGroupFragment;
 import com.dev.chat.vdomax.fragment.aa.GroupListFragment;
-import com.dev.chat.vdomax.handler.ApiBus;
 import com.dev.chat.vdomax.utils.UserManager;
 
 import butterknife.ButterKnife;
@@ -26,7 +24,7 @@ import butterknife.OnClick;
 
 public class ConversationViewPagerFragment extends BaseFragment {
     UserManager manager;
-    String userId;
+    int userId;
 
     public ConversationViewPagerFragment() {
     }
@@ -40,7 +38,7 @@ public class ConversationViewPagerFragment extends BaseFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         manager = new UserManager(getActivity());
-        userId = manager.getPref().getString("password","1");
+        userId = manager.getUserId();
 
         //ApiBus.getInstance().post(new GetFriendsEvent(userId));
         //ApiBus.getInstance().post(new GetFollowingsEvent(userId));
@@ -85,7 +83,7 @@ public class ConversationViewPagerFragment extends BaseFragment {
 
             @Override
             public void onPageSelected(int position) {
-                ApiBus.getInstance().post(new GetFollowersEvent(userId));
+                //ApiBus.getInstance().post(new GetFollowersEvent(userId + ""));
             }
 
             @Override
@@ -100,16 +98,16 @@ public class ConversationViewPagerFragment extends BaseFragment {
     @OnClick(R.id.btCreateGroup) public void onClickCreateGroup(){
         FragmentManager manager = getActivity().getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.add(R.id.frameFragment, CreateGroupFragment.newInstance());
+        transaction.add(R.id.fragment, CreateGroupFragment.newInstance());
         transaction.addToBackStack(null);
         transaction.commit();
        // Toast.makeText(getActivity(), "navIconLeft", Toast.LENGTH_SHORT).show();
 
     }
-    @OnClick(R.id.btCreateConference) public void onClickConference(){
+    @OnClick(R.id.btCreateConference) public void onClickCreateConference(){
         FragmentManager manager = getActivity().getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.add(R.id.frameFragment, GroupListFragment.newInstance());
+        transaction.add(R.id.fragment, GroupListFragment.newInstance());
         transaction.addToBackStack(null);
         transaction.commit();
     }

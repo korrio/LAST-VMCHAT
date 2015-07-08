@@ -13,7 +13,7 @@ import com.dev.chat.vdomax.R;
 import com.dev.chat.vdomax.adapter.addfriend.ListAddFriendAdapter;
 import com.dev.chat.vdomax.event.retrofit.addfriend.GetFollow_SuggestionSuccessEvent;
 import com.dev.chat.vdomax.fragment.BaseFragment;
-import com.dev.chat.vdomax.model.follow_suggestion_model.Follow_SuggestionModel;
+import com.dev.chat.vdomax.model.follow_suggestion_model.FollowSuggestionModel;
 import com.squareup.otto.Subscribe;
 
 import butterknife.ButterKnife;
@@ -43,10 +43,10 @@ public class AddFriendFragment extends BaseFragment {
         ButterKnife.inject(this , rootView);
         return rootView;
     }
-    @Subscribe public void onGetFollow_SuggestionSuccess(GetFollow_SuggestionSuccessEvent event){
+    @Subscribe public void onGetFollowSuggestionSuccess(GetFollow_SuggestionSuccessEvent event){
         initDataToView(event.getFollow_suggestionModel());
     }
-    void initDataToView(Follow_SuggestionModel modelData){
+    void initDataToView(FollowSuggestionModel modelData){
         ListAddFriendAdapter adapter = new ListAddFriendAdapter(getActivity() , modelData);
         listView.setAdapter(adapter);
     }

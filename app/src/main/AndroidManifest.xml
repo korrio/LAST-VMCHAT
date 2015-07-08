@@ -32,7 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TattooTabActivity" />
+        <activity android:name=".TattooFragment" />
         <activity android:name=".TattooStoreActivity" />
 
         <service android:name="com.parse.PushService" />
