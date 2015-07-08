@@ -67,7 +67,9 @@
     <string name="add_from_qr">From QR Code</string>
     <string name="add_from_id">From ID</string>
 
-    <string name="action_send_gift"></string>
-    <string name="action_download"></string>
+    <string name="action_send_gift">Send Gift</string>
+    <string name="action_download">Download</string>
+
+    <string name="by">by</string>
 
 </resources>
