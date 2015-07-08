@@ -7,19 +7,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.androidquery.AQuery;
-import com.dev.chat.vdomax.adapter.AdapterTattooStoreDeatil;
+import com.dev.chat.vdomax.adapter.TattooStoreDetailAdapter;
+import com.dev.chat.vdomax.model.TattooStore;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
-public class TattooStoreActivity extends ActionBarActivity {
+public class TattooDetailActivity extends ActionBarActivity {
 
 
     ArrayList<com.dev.chat.vdomax.model.TattooStore> list = new ArrayList<com.dev.chat.vdomax.model.TattooStore>();
 
-    AdapterTattooStoreDeatil adapterTattooStroe;
+    TattooStoreDetailAdapter adapterTattooStroe;
     ImageView sticker;
     TextView title_vdomax;
     TextView name_sticker;
@@ -30,7 +31,7 @@ public class TattooStoreActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_detail_tattoo_store);
+        setContentView(R.layout.activity_tattoo_detail);
         AQuery aq = new AQuery(getApplicationContext());
 
         sticker = (ImageView) findViewById(R.id.sticker);
@@ -40,7 +41,7 @@ public class TattooStoreActivity extends ActionBarActivity {
         price = (TextView) findViewById(R.id.price);
         gridView = (GridView) findViewById(R.id.gridView);
 
-        com.dev.chat.vdomax.model.TattooStore tattoo = Parcels.unwrap(getIntent().getBundleExtra("bundle").getParcelable("example"));
+        TattooStore tattoo = Parcels.unwrap(getIntent().getBundleExtra("bundle").getParcelable("tattoo"));
 
         title_vdomax.setText(tattoo.getItem_set_name());
         name_sticker.setText(tattoo.getCreate_by_name());
@@ -50,7 +51,7 @@ public class TattooStoreActivity extends ActionBarActivity {
                 .fit().centerCrop()
                 .into(sticker);
 
-        adapterTattooStroe = new AdapterTattooStoreDeatil(getApplicationContext(),tattoo.getTitle_vdomax());
+        adapterTattooStroe = new TattooStoreDetailAdapter(getApplicationContext(),tattoo.getTitle_vdomax());
         gridView.setAdapter(adapterTattooStroe);
     }
 

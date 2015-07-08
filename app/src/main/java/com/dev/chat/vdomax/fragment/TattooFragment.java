@@ -1,4 +1,4 @@
-package com.dev.chat.vdomax;
+package com.dev.chat.vdomax.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.astuetz.PagerSlidingTabStrip;
+import com.dev.chat.vdomax.R;
 import com.dev.chat.vdomax.adapter.TattooPagerAdapter;
-import com.dev.chat.vdomax.fragment.BaseFragment;
 
 import butterknife.ButterKnife;
 
@@ -38,7 +38,7 @@ public class TattooFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_contactlist, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_tattoo, container, false);
         ButterKnife.inject(this, rootView);
 
         ViewPager viewPager = (ViewPager) rootView.findViewById(R.id.viewpager);

@@ -1,28 +1,23 @@
 package com.dev.chat.vdomax.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.dev.chat.vdomax.R;
-import com.dev.chat.vdomax.model.Post;
-import com.dev.chat.vdomax.model.TattooStore;
-import com.github.siyamed.shapeimageview.CircularImageView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 
-public class AdapterTattooStoreDeatil extends BaseAdapter {
+public class TattooStoreDetailAdapter extends BaseAdapter {
     private Context activity;
     public ArrayList<String> list = new ArrayList<String>();
     String[] strName;
-    public AdapterTattooStoreDeatil(Context a, ArrayList<String> list) {
+    public TattooStoreDetailAdapter(Context a, ArrayList<String> list) {
         activity = a;
         this.list = list;
     }
@@ -60,7 +55,6 @@ public class AdapterTattooStoreDeatil extends BaseAdapter {
 
         Picasso.with(activity)
                 .load(path)
-                .fit().centerCrop()
                 .into(holder.sticker);
 
         return convertView;

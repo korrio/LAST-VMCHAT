@@ -1,10 +1,6 @@
 package com.dev.chat.vdomax.model;
 
-import com.dev.chat.vdomax.model.friendmodel.*;
-import com.dev.chat.vdomax.model.friendmodel.User;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class Post {
 

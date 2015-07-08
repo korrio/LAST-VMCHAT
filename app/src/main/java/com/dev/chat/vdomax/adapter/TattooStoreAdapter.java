@@ -15,11 +15,11 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 
-public class AdapterTattooStroe extends BaseAdapter {
+public class TattooStoreAdapter extends BaseAdapter {
     private Activity activity;
     public ArrayList<TattooStore> list = new ArrayList<TattooStore>();
 
-    public AdapterTattooStroe(Activity a, ArrayList<TattooStore> list) {
+    public TattooStoreAdapter(Activity a, ArrayList<TattooStore> list) {
         activity = a;
         this.list = list;
     }

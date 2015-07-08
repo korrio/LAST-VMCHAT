@@ -25,12 +25,17 @@
             <ImageView
                 android:id="@+id/sticker"
                 android:layout_width="120dp"
-                android:layout_height="120dp" />
+                android:layout_height="120dp"
+                android:scaleType="fitStart"
+                android:adjustViewBounds="true"
+                android:layout_margin="6dp"/>
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingLeft="6dp"
+                android:paddingRight="3dp">
 
                 <TextView
                     android:id="@+id/title_vdomax"
@@ -79,12 +84,15 @@
                     <Button
                         android:layout_weight="1"
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text="@string/action_send_gift"/>
 
                     <Button
                         android:layout_weight="1"
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text="@string/action_download"
+                        />
                 </LinearLayout>
 
             </LinearLayout>
@@ -96,12 +104,13 @@
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp">
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp">
         <TextView
-            android:textColor="#000000"
-            android:text="In this tutorial we’ll learn how to create a chat client that communicates with a Socket.IO Node.JS chat server, with our"
+            android:textColor="#252525"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"/>
         </LinearLayout>
 
     <LinearLayout
@@ -114,7 +123,8 @@
             android:id="@+id/gridView"
             android:numColumns="4"
             android:layout_gravity="center_vertical"
-            android:layout_marginTop="5dp" />
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"/>
     </LinearLayout>
 
 </LinearLayout>

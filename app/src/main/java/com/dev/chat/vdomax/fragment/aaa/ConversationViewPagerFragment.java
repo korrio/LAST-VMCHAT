@@ -14,8 +14,6 @@ import com.astuetz.PagerSlidingTabStrip;
 import com.dev.chat.vdomax.R;
 import com.dev.chat.vdomax.adapter.contactlistfragment.ConversationTabAdapter;
 import com.dev.chat.vdomax.fragment.BaseFragment;
-import com.dev.chat.vdomax.fragment.CreateGroupFragment;
-import com.dev.chat.vdomax.fragment.aa.GroupListFragment;
 import com.dev.chat.vdomax.utils.UserManager;
 
 import butterknife.ButterKnife;
@@ -98,18 +96,14 @@ public class ConversationViewPagerFragment extends BaseFragment {
     @OnClick(R.id.btCreateGroup) public void onClickCreateGroup(){
         FragmentManager manager = getActivity().getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.add(R.id.fragment, CreateGroupFragment.newInstance());
-        transaction.addToBackStack(null);
-        transaction.commit();
+        //transaction.add(R.id.fragment, CreateGroupFragment.newInstance());
+        //transaction.addToBackStack(null);
+        //transaction.commit();
        // Toast.makeText(getActivity(), "navIconLeft", Toast.LENGTH_SHORT).show();
 
     }
     @OnClick(R.id.btCreateConference) public void onClickCreateConference(){
-        FragmentManager manager = getActivity().getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.add(R.id.fragment, GroupListFragment.newInstance());
-        transaction.addToBackStack(null);
-        transaction.commit();
+
     }
 
 

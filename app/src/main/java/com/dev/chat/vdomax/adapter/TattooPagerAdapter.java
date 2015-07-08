@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.dev.chat.vdomax.fragment.FragmentTabhost.TattooStoreNew;
 import com.dev.chat.vdomax.fragment.FragmentTabhost.TattooStoreTop;
 
 
@@ -14,7 +13,7 @@ import com.dev.chat.vdomax.fragment.FragmentTabhost.TattooStoreTop;
  */
 public class TattooPagerAdapter extends FragmentPagerAdapter {
     final int PAGE_COUNT = 3;
-    private String tabTitles[] = new String[] { "Top", "New","Event"};
+    private String tabTitles[] = new String[] { "Top", "New","Original"};
 
     public TattooPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -28,7 +27,7 @@ public class TattooPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return (position == 0)? new TattooStoreTop() : new TattooStoreNew();
+        return TattooStoreTop.newInstance(position);
     }
 
     @Override

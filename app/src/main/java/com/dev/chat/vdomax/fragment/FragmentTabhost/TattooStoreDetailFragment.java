@@ -27,7 +27,7 @@ public class TattooStoreDetailFragment extends Fragment {
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_detail_tattoo_store, container, false);
+        View rootView = inflater.inflate(R.layout.activity_tattoo_detail, container, false);
         AQuery aq = new AQuery(getActivity());
 
         aq.ajax(url3, JSONObject.class, this, "getjson");
@@ -65,7 +65,7 @@ public class TattooStoreDetailFragment extends Fragment {
 
                 //list.add(list_item);
             }
-            //adapterTattooStroe.notifyDataSetChanged();
+            //adapter.notifyDataSetChanged();
             AQUtility.debug("done");
 
         } else {

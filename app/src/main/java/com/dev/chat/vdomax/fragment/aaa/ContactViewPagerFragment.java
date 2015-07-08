@@ -18,8 +18,6 @@ import com.dev.chat.vdomax.event.retrofit.followers.GetFollowersEvent;
 import com.dev.chat.vdomax.event.retrofit.following.GetFollowingsEvent;
 import com.dev.chat.vdomax.event.retrofit.friend.GetFriendsEvent;
 import com.dev.chat.vdomax.fragment.BaseFragment;
-import com.dev.chat.vdomax.fragment.CreateGroupFragment;
-import com.dev.chat.vdomax.fragment.aa.GroupListFragment;
 import com.dev.chat.vdomax.handler.ApiBus;
 import com.dev.chat.vdomax.utils.UserManager;
 
@@ -109,18 +107,14 @@ public class ContactViewPagerFragment extends BaseFragment {
     @OnClick(R.id.btCreateGroup) public void onClickCreateGroup(){
         FragmentManager manager = getActivity().getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.add(R.id.fragment, CreateGroupFragment.newInstance());
-        transaction.addToBackStack(null);
-        transaction.commit();
+        //transaction.add(R.id.fragment, CreateGroupFragment.newInstance());
+        //transaction.addToBackStack(null);
+        //transaction.commit();
        // Toast.makeText(getActivity(), "navIconLeft", Toast.LENGTH_SHORT).show();
 
     }
     @OnClick(R.id.btCreateConference) public void onClickConference(){
-        FragmentManager manager = getActivity().getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.add(R.id.fragment, GroupListFragment.newInstance());
-        transaction.addToBackStack(null);
-        transaction.commit();
+
     }
 
 

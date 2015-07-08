@@ -32,8 +32,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TattooFragment" />
-        <activity android:name=".TattooStoreActivity" />
+        <activity android:name=".fragment.TattooFragment" />
+        <activity android:name=".TattooDetailActivity" />
 
         <service android:name="com.parse.PushService" />
         <receiver android:name="com.parse.ParseBroadcastReceiver" >

@@ -23,6 +23,7 @@ import com.dev.chat.vdomax.event.GetUserEvent;
 import com.dev.chat.vdomax.event.GetUserEventSuccess;
 import com.dev.chat.vdomax.event.retrofit.addfriend.GetFollowSuggestionEvent;
 import com.dev.chat.vdomax.event.retrofit.friend.GetFriendSuccessEvent;
+import com.dev.chat.vdomax.fragment.TattooFragment;
 import com.dev.chat.vdomax.fragment.aaa.ContactViewPagerFragment;
 import com.dev.chat.vdomax.fragment.aaa.ConversationViewPagerFragment;
 import com.dev.chat.vdomax.fragment.addfriend.AddFriendByIdFragment;

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +15,9 @@ import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxStatus;
 import com.androidquery.util.AQUtility;
 import com.dev.chat.vdomax.R;
-import com.dev.chat.vdomax.TattooStoreActivity;
-import com.dev.chat.vdomax.adapter.AdapterTattooStroe;
+import com.dev.chat.vdomax.TattooDetailActivity;
+import com.dev.chat.vdomax.adapter.TattooStoreAdapter;
+import com.dev.chat.vdomax.model.TattooStore;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,8 +27,10 @@ import org.parceler.Parcels;
 import java.util.ArrayList;
 
 public class TattooStoreTop extends Fragment {
-    String url3 = "https://www.vdomax.com/market/api/market.php?action=getmarketitem&mobile=1";
-    AdapterTattooStroe adapterTattooStroe;
+    String url0 = "https://www.vdomax.com/market/api/market.php?action=getpopularitem&page=1&cat_id_list=3&mobile=1";
+    String url1 = "https://www.vdomax.com/market/api/market.php?action=getmarketitem&cat_id_list=3&mobile=1";
+    String url2 = "https://www.vdomax.com/market/api/market.php?action=getmarketitem&cat_id_list=3&search_term=vdomax&mobile=1";
+    TattooStoreAdapter adapter;
     ArrayList<com.dev.chat.vdomax.model.TattooStore> list = new ArrayList<com.dev.chat.vdomax.model.TattooStore>();
     private ListView mListView;
     private static boolean isNotAdded = true;
@@ -47,42 +49,49 @@ public class TattooStoreTop extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //mPage = getArguments().getInt(ARG_PAGE);
+        mPage = getArguments().getInt(ARG_PAGE);
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_tattoo_store, container, false);
         AQuery aq = new AQuery(getActivity());
         mListView = (ListView) rootView.findViewById(R.id.list_view);
-        adapterTattooStroe = new AdapterTattooStroe(getActivity(),list);
+        adapter = new TattooStoreAdapter(getActivity(),list);
+
+        final View headerView = getActivity().getLayoutInflater().inflate(R.layout.item_header_tattoo_store_top,mListView, false);
+        mListView.addHeaderView(headerView);
 
 
-            final View headerView = getActivity().getLayoutInflater().inflate(R.layout.item_header_tattoo_store_top,mListView, false);
-
-            mListView.addHeaderView(headerView);
-
-
-        mListView.setAdapter(adapterTattooStroe);
+        mListView.setAdapter(adapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-//                DetailTattooStore detailTattooStore = new DetailTattooStore();
-//                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-//                transaction.replace(R.id.fragment_container, detailTattooStore);
-//                transaction.addToBackStack(null);
-//                transaction.commit();
-
-                Intent i =new Intent(getActivity(), TattooStoreActivity.class);
+                Intent i =new Intent(getActivity(), TattooDetailActivity.class);
                 Parcelable wrapped = Parcels.wrap(list.get(position-1));
                 Bundle bundle = new Bundle();
-                bundle.putParcelable("example", wrapped);
+                bundle.putParcelable("tattoo", wrapped);
                 i.putExtra("bundle",bundle);
                 startActivity(i);
             }
         });
-        aq.ajax(url3, JSONObject.class, this, "getjson");
+
+        String url = "";
+        switch (mPage) {
+            case 0:
+                url = url0;
+                break;
+            case 1:
+                url = url1;
+                break;
+            case 2:
+                url = url2;
+                break;
+        }
+
+
+        aq.ajax(url, JSONObject.class, this, "getjson");
 
         return rootView;
     }
@@ -106,20 +115,18 @@ public class TattooStoreTop extends Fragment {
                     }
                 }
 
+                String imageFull = "https://www.vdomax.com/assets/items/tattoo/"+jArray.opt(0);
 
-                String imageFull = "https://www.vdomax.com/assets/items/tattoo/"+jArray.opt(+1)+"";
-                Log.i("Test_chcl", imageFull);
+                String createByName = obj.optString("create_by_name");
+                String itemSetName = obj.optString("item_set_name");
 
-                String name_title = obj.optString("create_by_name");
                 String avatar = obj.optString("avatar_url");
-                 String item_set_name = obj.optString("item_set_name");
 
-
-                com.dev.chat.vdomax.model.TattooStore list_item = new com.dev.chat.vdomax.model.TattooStore(imageFull,listdata,null,null,null,item_set_name,name_title);
+                TattooStore list_item = new TattooStore(imageFull,listdata,null,null,null,createByName,itemSetName);
 
                 list.add(list_item);
             }
-            adapterTattooStroe.notifyDataSetChanged();
+            adapter.notifyDataSetChanged();
             AQUtility.debug("done");
 
         } else {

@@ -1,9 +1,5 @@
 package com.dev.chat.vdomax.fragment.FragmentTabhost;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
@@ -30,6 +26,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dev.chat.vdomax.R;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
@@ -142,11 +142,11 @@ public class ListViewSwipeGesture implements View.OnTouchListener {
         mAnimationTime          =   mListView.getContext().getResources().getInteger(
                 android.R.integer.config_shortAnimTime);
         HalfColor           =   RangeOneColor;          //Green
-        FullColor           =   activity.getResources().getString(R.string.delete);         //Orange
-        HalfText            =   activity.getResources().getString(R.string.delete);
-        HalfTextFinal         =   activity.getResources().getString(R.string.delete);
-        FullText            =   activity.getResources().getString(R.string.delete);
-        FullTextFinal         =   activity.getResources().getString(R.string.delete);
+        FullColor           =   activity.getResources().getString(R.string.action_delete);         //Orange
+        HalfText            =   activity.getResources().getString(R.string.action_delete);
+        HalfTextFinal         =   activity.getResources().getString(R.string.action_delete);
+        FullText            =   activity.getResources().getString(R.string.action_delete);
+        FullTextFinal         =   activity.getResources().getString(R.string.action_delete);
         //  closeDrawable        =   activity.getResources().getDrawable( R.drawable.delete );
         //  FullDrawable        =   activity.getResources().getDrawable(R.drawable.delete);/*   */
     }
@@ -382,7 +382,7 @@ public class ListViewSwipeGesture implements View.OnTouchListener {
         mDownView_parent_txt1 =	new TextView(activity.getApplicationContext());
         lp1 =new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT,android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT);
         lp1.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-        mDownView_parent_txt1.setId(111111);
+        //mDownView_parent_txt1.setId(111111);
         mDownView_parent_txt1.setLayoutParams(lp1);
         mDownView_parent_txt1.setGravity( Gravity.CENTER_HORIZONTAL);
         mDownView_parent_txt1.setText(HalfText);
@@ -396,7 +396,7 @@ public class ListViewSwipeGesture implements View.OnTouchListener {
 
         if(SwipeType==Double){
             mDownView_parent_txt2 = new TextView(activity.getApplicationContext());
-            mDownView_parent_txt2.setId(222222);
+            //mDownView_parent_txt2.setId(222222);
             lp2 =new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT,android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT);
             lp2.addRule(RelativeLayout.LEFT_OF,mDownView_parent_txt1.getId());
             mDownView_parent_txt2.setLayoutParams(lp2);
@@ -417,7 +417,7 @@ public class ListViewSwipeGesture implements View.OnTouchListener {
         mDownView_parent_txt1 =	new TextView(activity.getApplicationContext());
         lp1 =new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT,android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT);
         lp1.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-        mDownView_parent_txt1.setId(111111);
+        //mDownView_parent_txt1.setId(111111);
         mDownView_parent_txt1.setLayoutParams(lp1);
         mDownView_parent_txt1.setGravity( Gravity.CENTER_HORIZONTAL);
         mDownView_parent_txt1.setText("");
@@ -431,7 +431,7 @@ public class ListViewSwipeGesture implements View.OnTouchListener {
 
         if(SwipeType==Double){
             mDownView_parent_txt2 = new TextView(activity.getApplicationContext());
-            mDownView_parent_txt2.setId(222222);
+            //mDownView_parent_txt2.setId(222222);
             lp2 =new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT,android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT);
             lp2.addRule(RelativeLayout.LEFT_OF,mDownView_parent_txt1.getId());
             mDownView_parent_txt2.setLayoutParams(lp2);
